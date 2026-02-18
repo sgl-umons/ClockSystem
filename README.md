@@ -24,7 +24,7 @@ gradle run
 
 To run the application correctly, you can either use a **manual setup** ensuring you have the correct version of Java and Gradle installed locally on your machine.
 
-But you can avoid this by first setting up an isolated development environment, for example using 
+But you can avoid this by first setting up an isolated development environment, for example using
 **DevContainer** or **Nix** that will ensure that all correct versions of all tools and libraries required for the application are installed.
 
 ### Using Nix
@@ -32,10 +32,10 @@ But you can avoid this by first setting up an isolated development environment, 
 This approach will setup a development environment using the [Nix](https://nixos.org) package manager.
 No containerisation is used, and the development environment will be installed on your local machine, in **total isolation** from your current system packages.
 
-1. Install Nix package manager: `curl -L https://nixos.org/nix/install | sh`
+1. Install Nix package manager: `curl -sSfL https://artifacts.nixos.org/nix-installer | sh -s -- install` (from https://github.com/NixOS/nix-installer)
 2. Go to the project root folder
-3. Run `nix develop` to enter the development environment
-4. Start using the gradle commands for building, testing and executing the application and interact with it through its GUI.
+3. Run `nix-shell` to enter the development environment
+4. Start using the Gradle commands for building, testing and executing the application and interact with it through its GUI.
 5. Once you are done, exit the development environment by running `exit`
 
 ### Using DevContainer (Container based)
@@ -54,6 +54,3 @@ Due to the graphical nature of the Java application, running the GUI may not be 
       ([documentation](https://www.jetbrains.com/help/idea/connect-to-devcontainer.html))
 3. Open the project in your IDE, and you should see a notification to reopen the project in a container, click on it.
 4. Once the project is reopened in the container, you need to wait a bit for the container to build and start, and then you can start developing, all the tools and dependencies are already installed in the container.
-
-
-
